@@ -1,0 +1,184 @@
+// Default browser px
+$browser-context:16; //Default
+
+// calculate em from px
+@function em($pixels, $context:$browser-context){
+    @return #{$pixels/$context}em;
+}
+
+/// Event wrapper
+@mixin on-event($self-false){
+    @if $self{
+        &,
+        &:hover,
+        &:active,
+        &:focus{
+            @content;
+        }
+    } @else{
+        &:hover,
+        &:active,
+        &:focus{
+            @content;
+        }
+    }
+}
+
+/// Make a context based selector
+/// @param {String} $context
+@mixin when-inside($context){
+    #{$context} & {
+        @content;
+    }
+}
+
+@mixin border-radius($radius:3px){
+    -webkit-border-radius:$radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius:$radius;
+    border-radius:$radius;
+}
+@mixin border-radius-top-left($radius: 3px){
+    -webkit-border-top-left-radius:$radius;
+    -moz-border-top-left-radius: $radius;
+    -ms-border-top-left-radius:$radius;
+    border-top-left-radius:$radius;
+}
+@mixin border-radius-top-right($radius: 3px){
+    -webkit-border-top-right-radius:$radius;
+    -moz-border-top-right-radius: $radius;
+    -ms-border-top-right-radius:$radius;
+    border-top-right-radius:$radius;
+}
+@mixin border-radius-bottom-left($radius: 3px){
+    -webkit-border-bottom-left-radius:$radius;
+    -moz-border-bottom-left-radius: $radius;
+    -ms-border-bottom-left-radius:$radius;
+    border-bottom-left-radius:$radius;
+}
+@mixin border-radius-bottom-right($radius: 3px){
+    -webkit-border-bottom-right-radius:$radius;
+    -moz-border-bottom-right-radius: $radius;
+    -ms-border-bottom-right-radius:$radius;
+    border-bottom-right-radius:$radius;
+}
+
+@mixin font($family:$text-font-stack,$size:$text-semibold-soze, $weight:$text-regular){
+    font: {
+        family: $family;
+        size: $size;
+        weight:$weight;
+    }
+}
+@mixin border($width: 1px, $style:solid, $color: #005844){
+    boder: $width $style $color;
+    -webkit-transition: border linear 0s;
+    -moz-transition: border linear 0s;
+    -o-transition: border linear 0s;
+    transition: border linear 0s;
+    -webkit-transition: border-color linear 0.2s;
+    -moz-transition: border-color linear 0.2s;
+    -o-transition: border-color linear 0.2s;
+    transition: border-color linear 0.2s;
+}
+@mixin box-shadow($off-x:0px, $off-y:0px, $rad: 3px, $spread:1px, $color: #fff){
+    box-shadow: $off-x $off-y $rad $spread $color;
+    -moz-box-shadow: $off-x $off-y $rad $spread $color;
+    -webkit-box-shadow: $off-x $off-y $rad $spread $color;
+}
+@mixin tablet{
+    @media (min-width: #{map-get($breakpoints, 'medium')}) and (max-width: #{map-get($breakpoints, 'large') -1px}){
+        @content;
+    }
+}
+@mixin desktop{
+    @media (min-width: #{map-get($breakpoints, 'large')}){
+        @content;
+    }
+}
+@mixin mobile{
+    @media (min-width: #{map-get($breakpoints, 'medium') -1px}){
+        @content;
+    }
+}
+@mixin except-mobile{
+    @media (max-width: 540px){
+        @content;
+    }
+}
+@mixin except-mobile{
+    @media (min-width: 540px){
+        @content;
+    }
+}
+@mixin only-mobile{
+    @media (max-width: 540px){
+        @content;
+    }
+}
+@mixin ie-only{
+    @media (min-width: #{map-get($breakpoints, 'large')}) and (-ms-high-contrast: none), (-ms-high-contrast: active){
+        @content;
+    }
+}
+@mixin retina{
+    @media 
+        only screen and (-webkit-min-device-pixel-ratio:2),
+        only screen and (-min--moz-device-pixel-ratio:2),
+        only screen and (-o-min-device-pixel-ratio:2/1),
+        only screen and (min-device-pixel-ratio:2),
+        only screen and (min-resolution: 192dpi),
+        only screen and (min-resolution: 2dppx){
+            @content;
+        }
+}
+@mixin print{
+    @media print{
+        @content;
+    }
+}
+@mixin font-size($size:16px){
+    font-size:$size;
+}
+@mixin placeholder{
+    ::-webkit-input-placeholder{@content};
+    :-moz-placeholder{@content};
+    ::-moz-placeholder{@content};
+    :-ms-input-placeholder{@content};
+}
+@mixin background($url, $soze, $repeat: no-repeat){
+    background: url($url) $repeat;
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    -o-background-size: $size;
+    background-size: $size;
+}
+@mixin optional-at-root($sel){
+    @at-root #{if(not &, $sel, selector-append(&, $sel))}{
+        @content;
+    }
+}
+@mixin appearance($value:none){
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+    appearance: $value;
+}
+
+@mixin placeholder{
+    @include optional-at-root('::-webkit-input-placeholder'){
+        @content;
+    }
+
+    @include optional-at-root('::-webkit-input-placeholder'){
+        @content;
+    }
+    @include optional-at-root(':-moz-placeholder'){
+        @content;
+    }   
+    @include optional-at-root('::-moz-placeholder'){
+        @content;
+    }   
+    @include optional-at-root('::-ms-input-placeholder'){
+        @content;
+    }
+}
