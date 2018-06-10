@@ -1,0 +1,55 @@
+// Backgrounf colors
+$background-clr-light: rgba(241,241,241,0);
+$background-clr-semidark: rgb(209,224,218);
+$background-clr-card: rgb(241,241,241);
+$background-clr: #fff;
+
+// Shadow colors
+$base-shadow-clr: rgba(0,0,0,0.4);
+
+// text color
+$text-color: #111211;
+$text-color-dark: rgb(0,0,0) !default;
+$text-semibold-size: 16px;
+$textfont-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica', 'Arial', sans-serif !default;
+$text-bold: 700;
+$text-semibold: 600;
+$text-regular: 400;
+$text-light: 300;
+
+/// Links button
+$breakpoints:(
+    'small': 320px,
+    'medium': 768px,
+    'large': 1024px
+) !default;
+
+$main-green: #00693C;
+$ui-green: #003024;
+$bg-green:rgba(15,51,39,0.8);
+$base-url:'/assets/' !default;
+
+// Buttom theme
+$btn-height: 44px;
+$btn-primary-clr: #ffffff;
+$btn-primary-bg-clr: #4E803B;
+$btn-primary-bg-clr-focus: #005844;
+
+$btn-secondary-clr: #4E803B;
+$btn-secondary-brdr-clr: #4E803B;
+$btn-secondary-clr-focus: #005844;
+$btn-secondary-brdr-clr-focus: #005844;
+
+$btn-disabled-clr: #737373;
+$btn-disabled-brdr-clr: #C0C0C0;
+
+$btn-warning-clr: #111212;
+$btn-warning-bg-clr: #FFB500;
+$btn-warning-clr-focus: #111212;
+$btn-warning-bg-clr-focus: rgba(255,181,0,0,5);
+
+// Table theme
+$thead-clr: #fff;
+$thead-bg-clr: #00693C;
+$thead-brdr-clr: rgba(209,224,218);
+$thead-stripp-clr: #F1F1F1;

@@ -1,0 +1,104 @@
+/** 
+* typography for copy text
+*/
+.hero-head{
+    color: #FFFF;
+    @include font ($text-font-stack, 32px, $text-regular);
+    @include mobile {
+        @include font ($text-font-stack, 28px, $text-regular);
+    }
+}
+.hero-subhead{
+    color:#FFFF;
+    @include font ($text-font-stack, 26px, $text-regular);
+    @include mobile {
+        @include font ($text-font-stack, 22px, $text-regular);
+    }
+}
+.page-head{
+    color:#555858;
+    @include font ($text-font-stack, 28px, $text-regular);
+    @include mobile {
+        @include font ($text-font-stack, 24px, $text-regular);
+    }
+}
+.page-subhead{
+    color:#555858;
+    @include font ($text-font-stack, 24px, $text-regular);
+    @include mobile {
+        @include font ($text-font-stack, 21px, $text-regular);
+    }
+}
+.section-title{
+    color:#555858;
+    @include font ($text-font-stack, 22px, $text-regular);
+    @include mobile {
+        @include font ($text-font-stack, 18px, $text-regular);
+    }
+}
+.section-subtitle{
+    color:#555858;
+    @include font ($text-font-stack, 20px, $text-light);
+    @include mobile {
+        @include font ($text-font-stack, 18px, $text-light);
+    }
+}
+
+.tile-headline{
+    color:#ffff;
+    @include font ($text-font-stack, 18px, $text-bold);
+}
+.title{
+    color:#111212;
+    @include font ($text-font-stack, 18px, $text-semibold);
+}
+.emphasis{
+    color:#555858;
+    @include font ($text-font-stack, 16px, $text-semibold);
+}
+
+.emphasis-2{
+    color:#111212;
+    @include font ($text-font-stack, 16px, $text-semibold);
+    @include mobile {
+        @include font ($text-font-stack, 14px, $text-bold);
+    }
+}
+.paragraph{
+    color:#111212;
+    @include font ($text-font-stack, 16px, $text-regular);
+}
+.paragraph-2{
+    color:#111212;
+    @include font ($text-font-stack, 16px, $text-regular);
+    @include mobile {
+        @include font ($text-font-stack, 14px, $text-regular);
+    }
+}
+
+.footnote{
+    color:#111212;
+    @include font ($text-font-stack, 14px, $text-regular);
+}
+.footnote-2{
+    color:#111212;
+    @include font ($text-font-stack, 12px, $text-regular);
+}
+.footnote-3{
+    color:#00693C;
+    @include font ($text-font-stack, 14px, $text-semibold);
+}
+.uppercase{
+    text-transform: uppercase;
+}
+a{
+    text-decoration: none;
+    color: #00693C;
+    @include font($text-font-stack, 16px, $text-regular);
+    &:hover,
+    &:focus {
+        color: #005844;
+        text-decoration: underline;
+        @include font($text-font-stack, 16px, $text-semibold);
+    }
+}
