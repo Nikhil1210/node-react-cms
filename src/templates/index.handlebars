@@ -1,0 +1,10 @@
+<script>
+    window.APP_STATE= {{{json context}}}
+    {{#if sessionFlash}}
+    window.FLASH= {{{json sessionFlash}}}
+    {{/if}}
+</script>
+<link rel="stylesheet" href="/assets/app.css">
+<div id="content">{{{reactContent}}}</div>
+<script src="/assets/vendor.js"></script>
+<script src="/assets/app.js"></script>

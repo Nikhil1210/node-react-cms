@@ -1,0 +1,38 @@
+.btn{
+    height: $btn-height;
+    @include border-radius();
+    @include font();
+    border: none;
+}
+.btn-primary{
+    color: $btn-primary-clr;
+    background-color: $btn-primary-bg-clr;
+    &:hover,
+    &:focus{
+        background-color: $btn-primary-bg-clr-focus;
+    }
+}
+%btn-seconday{
+    color: $btn-secondary-clr;
+    background-color: #fff;
+    @include border(2px, solid, $btn-primary-brdr-clr);
+    &:hover,
+    &:focus{
+        color: $btn-secondary-clr-focus;
+        background-color: #fff;
+        @include border(2-x, solid, $btn-secondary-brdr-clr-focus);
+    }
+}
+.disabled{
+    color: $btn-disabled-clr;
+    @include border(2px,solid, $btn-disabled-brdr-clr);
+}
+.btn-warning{
+    color: $btn-warning-clr;
+    background-color: $btn-warning-bg-clr;
+    &:hover,
+    &:focus {
+        color: $btn-warning-clr-focus;
+        background-color: $btn-warning-bg-clr-focus;
+    }
+}
