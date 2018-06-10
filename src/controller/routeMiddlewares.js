@@ -19,10 +19,23 @@ const _routeMiddlewares = Object.freeze([
         layout: 'CMS Login URL',
         view: 'index'
     },{
+        path: '/:lang(en|fr)-ca/logout',
+        mehotd: httpMethods.get,
+        dataMiddleware: logoutMiddleware,
+        layout: 'CMS Login URL',
+        view: 'index'
+    },
+    {
         path: '/:lang(en|fr)-ca/home',
         mehotd: httpMethods.get,
         dataMiddleware: homeMiddlware,
         layout: 'CMS home URL',
+        view: 'index'
+    },{
+        path: '/:lang(en|fr)-ca/register/:hash',
+        mehotd: httpMethods.get,
+        dataMiddleware: registrationConfirmationMiddleware,
+        layout: 'CMS login URL',
         view: 'index'
     },{
         path: '/:lang(en|fr)-ca/register',
